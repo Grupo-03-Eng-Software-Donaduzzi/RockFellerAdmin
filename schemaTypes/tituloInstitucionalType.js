@@ -1,7 +1,7 @@
 import {defineField, defineType} from 'sanity'
 
-export const tituloInstitucionalType  = defineType({
-  name: 'infoInstitucional', 
+export const tituloinstitucionalType  = defineType({
+  name: 'info_institucional', 
   title: 'Informações Institucionais', 
   type: 'document', 
   

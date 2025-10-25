@@ -6,20 +6,28 @@ export const planosTypes = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'Nome',
+      name: 'nome',
+      title: 'Nome',
       type: 'string',
+      description: 'Digite o nome do plano.',
     }),
     defineField({
-      name: 'Valor',
+      name: 'valor',
+      title: 'Valor',
       type: 'number',
+      description: 'Digite o valor do plano.',
     }),
     defineField({
-      name: 'Descricao',
+      name: 'descricao',
+      title: 'Descrição',
       type: 'string',
+      description: 'Crie uma descrição para o plano.',
     }),
     defineField({
-        name: 'Imagem',
-        type: 'image'
+        name: 'imagem',
+      title: 'Imagem',
+        type: 'image',
+      description: 'Envie a imagem que será demonstrada pelo plano.',
     })
   ],
 })

@@ -2,20 +2,26 @@ import { defineType, defineField } from 'sanity'
 
 export const depoimentosType = defineType({
   name: 'depoimentos',
-  title: 'depoimento',
+  title: 'Depoimentos',
   type: 'document',
   fields: [
     defineField({
-      name: 'Nome',
+      name: 'nome',
+      title: 'Nome',
       type: 'string',
+      description: 'Digite o nome da pessoa que fez o depoimento.',
     }),
     defineField({
-      name: 'Mensagem',
-      type: 'text'
+      name: 'mensagem',
+      title: 'Mensagem',
+      type: 'text',
+      description: 'Digite a mensagem do depoimento.',
     }),
     defineField({
-      name: 'Nota',
+      name: 'nota',
+      title: 'Nota',
       type: 'number',
+      description: 'Insira a nota que foi dada pelo depoimento.',
     }),
   ],
 })
