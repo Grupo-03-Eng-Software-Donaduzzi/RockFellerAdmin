@@ -1,31 +1,50 @@
 import { defineField, defineType } from 'sanity'
 
 export const testenivelamentoType = defineType({
-    name: 'teste_nivelamento',
-    title: 'Teste de Nivelamento',
-    type: 'document',
+  name: 'teste_nivelamento',
+  title: 'Teste de Nivelamento',
+  type: 'document',
 
-    fields: [
-        defineField({
-            name: 'perguntas',
-            title: 'Pergunta',
-            type: 'text',
-            description: 'Perguntas para responder no teste.',
-        }),
+  fields: [
+    defineField({
+      name: 'titulo',
+      title: 'Título do Teste',
+      type: 'string',
+      description: 'Título exibido no teste',
+    }),
 
-        defineField({
-            name: 'alternativas',
-            title: 'Alternativas',
-            type: 'array', of: [{ type: 'string' }],
-            description: 'Alternativas a serem inseridas no teste.',
-        }),
-
-        defineField({
-            name: 'resposta_correta',
-            title: 'Resposta Correta',
-            type: 'string',
-            description: 'Resposta correta da pergunta.',
-        }),
-
-    ]
+    defineField({
+      name: 'perguntas',
+      title: 'Perguntas',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'pergunta',
+          title: 'Pergunta',
+          fields: [
+            defineField({
+              name: 'enunciado',
+              title: 'Enunciado',
+              type: 'string',
+              description: 'Texto da pergunta',
+            }),
+            defineField({
+              name: 'alternativas',
+              title: 'Alternativas',
+              type: 'array',
+              of: [{ type: 'string' }],
+              description: 'Opções de resposta',
+            }),
+            defineField({
+              name: 'resposta_correta',
+              title: 'Resposta Correta',
+              type: 'string',
+              description: 'A alternativa correta',
+            }),
+          ],
+        },
+      ],
+    }),
+  ],
 })
