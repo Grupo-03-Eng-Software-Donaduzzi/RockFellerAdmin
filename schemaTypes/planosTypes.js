@@ -28,6 +28,31 @@ export const planosTypes = defineType({
       title: 'Imagem',
         type: 'image',
       description: 'Envie a imagem que será demonstrada pelo plano.',
-    })
+    }),
+    defineField({
+      name: 'etapas',
+      title: 'Etapas',
+      type: 'array',
+      of: [{type: 'object',
+          fields: [
+            {
+              name: 'etapaNome',
+              title: 'Nome da Etapa',
+              type: 'string',
+            },
+            {
+              name: 'etapaDescricao',
+              title: 'Descrição da Etapa',
+              type: 'string',
+            },
+            {
+              name: 'etapaIcone',
+              title: 'Ícone da Etapa',
+              type: 'image',
+            }
+          ],
+            }],
+      description: 'Adicione as etapas/livros que o plano oferece.',
+    }),
   ],
 })
