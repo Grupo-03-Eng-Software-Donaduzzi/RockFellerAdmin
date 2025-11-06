@@ -83,6 +83,11 @@ export const dadosempresaType = defineType({
       type: 'string',
       description: 'Insira o link para o tiktok da instituição.',
     }),
-
+    defineField({
+      name: 'spotify',
+      title: 'Spotify',
+      type: 'string',
+      description: 'Insira o link para o spotify da instituição.',
+    }), 
   ],
 })
